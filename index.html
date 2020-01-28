@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Quiz App</title>
+    <meta name="description"
+      content="Random quiz with random subjects to make people Google different topics."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="outer.css" />
+    <link rel="stylesheet" type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" />
+  </head>
+
+  <body>
+  
+   <!-- Main Starting Page -->
+  
+    <section role="main" id="start-page">
+      <div id="start-page-title"><h1>Welcome back to school!<br>Pop Quiz Time!</h1></div>
+      <div id="intro-page">
+        <p>
+          I hope you studied <br>Since this will account for all of your grade!
+        </p>
+      </div>
+      <div id="start-page-button">
+        <button id="js-start-button">Start</button>
+      </div>
+    </section>
+  
+  <!-- Render JS Question -->
+  
+      <section id="results" role= "js rendered question set">
+        <h1>Question Sets</h1>
+        <form name="quizForm" onsubmit="return submitAnswers()">
+          <div class="box">
+          
+          <h3>1. In the popular book and television show "Game of Thrones" who masterminded the plot to kill King Joffrey?</h3>
+          <input type="radio" name="q1" value="1" id="q1a" />a. Lord Varys<br />
+          <input type="radio" name="q1" value="2" id="q1b" />b. Olenna Tyrell<br />
+          <input type="radio" name="q1" value="3" id="q1c" />c. Rene Artois.<br />
+        <input type="radio" name="q1" value="4" id="q1c" />d. Rene Artois.<br />
+        </div>
+        <div class="box">
+          <h3>2. What is NOT one of the colors of the rainbow?</h3>
+          <input type="radio" name="q2" value="1" id="q2a" />a. Red.<br />
+          <input type="radio" name="q2" value="2" id="q2b" />b. Violet<br />
+          <input type="radio" name="q2" value="3" id="q2c" />c. Pink <br />
+          <input type="radio" name="q2" value="4" id="q2d" />c. Indigo.<br />
+        </div>
+        <div class="box">
+          <h3>3. In the latest Star Wars movie "The Last Jedi", who are Rey's parents?</h3>
+          <input type="radio" name="q3" value="1" id="q3a" />a. True<br />
+          <input type="radio" name="q3" value="2" id="q3b" />b. False<br />
+          <input type="radio" name="q3" value="3" id="q3c" />c. Pink <br />
+          <input type="radio" name="q3" value="4" id="q3d" />c. Indigo.<br />
+          <h3>
+      </div>
+      <div class="box">
+           <h3> 4. Which of these is the correct lyrics to the song "Bohemian Rhapsody"?</h3>
+          <input type="radio" name="q4" value="1" id="q4a" />a. Mama, you just killed a man<br />
+          <input type="radio" name="q4" value="2" id="q4b" />b. Sends lots of shivers down my spine<br />
+          <input type="radio" name="q4" value="3" id="q4c" />c. Carry on, carry on <br />
+          <input type="radio" name="q4" value="4" id="q4d" />c. Goodbye everybody, I'm not gonna go<br />
+        </div>
+        <div class="box">
+          <h3>5. In the anime/manga 'One Piece', who is not part of the Straw Hat crew?</h3>
+          <input type="radio" name="q5" value="1" id="q5a" />a. Brook<br />
+          <input type="radio" name="q5" value="2" id="q5b" />b. Nami<br />
+          <input type="radio" name="q5" value="3" id="q5c" />c. Ace <br />
+          <input type="radio" name="q5" value="4" id="q5d" />d. Zoro <br />
+        </div>
+        </form>
+      </section>
+
+<!-- Wrong Answer Screen -->
+          <section id="feedback-page" role="main">
+            <h1>Wrong Answer Screen</h1>
+              <h2>Sorry, wrong answer! The right answer was ${
+                ANSWERS[questionNum - 1]
+              }!</h2></section>
+            <button id="js-next-button">Next</button>
+
+<!-- Correct Answer Screen -->
+            <section id="feedback-page" role="main">
+              <h1>Right Answer Screen</h1>
+                <h2 >Correct! The right answer is: ${ANSWERS[questionNum - 1]}</h2> </section>
+              <button id="js-next-button">Next</button>
+
+  <!-- Final Result Section -->
+            <section id="final-page">
+              <h1>Final Score Results</h1>
+                <h2>Final Score: ${correctAnswers} out of 10</h2>
+              </section>
+              <button id="js-restart-button">Try Again?</button>
+        
+  </body>
+</html>
